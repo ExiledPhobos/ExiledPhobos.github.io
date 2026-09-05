@@ -9,7 +9,29 @@
     <meta property="og:description" content="Software engineer working across Vue.js, Node.js, AWS, APIs, cloud systems and integrations.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://exiledphobos.github.io/">
+    <meta property="og:image" content="https://exiledphobos.github.io/images/photo.png">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://exiledphobos.github.io/">
     <title>Nikiforos Mitrakos | Software Engineer</title>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Nikiforos Mitrakos",
+        "url": "https://exiledphobos.github.io/",
+        "image": "https://exiledphobos.github.io/images/photo.png",
+        "jobTitle": "Software Engineer",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Speedcast"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/nikiforos-mitrakos/",
+            "https://github.com/ExiledPhobos"
+        ]
+    }
+    </script>
 
     <style>
         :root {
@@ -43,6 +65,7 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.65;
+            font-size: 16px;
         }
 
         img {
@@ -94,7 +117,7 @@
             color: #d8e1ef;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .nav-links a:hover,
@@ -119,7 +142,7 @@
         .eyebrow {
             margin: 0 0 14px;
             color: #aac4ff;
-            font-size: 0.9rem;
+            font-size: 0.94rem;
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
@@ -330,6 +353,14 @@
             letter-spacing: -0.02em;
         }
 
+        .project-tech {
+            margin: 0 0 10px;
+            color: var(--accent-dark);
+            font-size: 0.86rem;
+            font-weight: 750;
+            letter-spacing: 0.01em;
+        }
+
         .project-body p {
             margin: 0 0 18px;
             color: var(--muted);
@@ -370,24 +401,44 @@
             justify-content: flex-end;
         }
 
-        .contact-links a {
+        .contact-action {
             border: 1px solid var(--border);
             padding: 10px 14px;
             border-radius: 10px;
             text-decoration: none;
+            font: inherit;
             font-weight: 700;
+            color: var(--text);
             background: #fff;
+            cursor: pointer;
         }
 
-        .contact-links a:hover,
-        .contact-links a:focus-visible {
+        .contact-action:hover,
+        .contact-action:focus-visible {
             border-color: #aebbd0;
+            background: #f8fafc;
+        }
+
+        .email-address {
+            display: block;
+            margin-top: 6px;
+            color: var(--text);
+            font-weight: 650;
+            overflow-wrap: anywhere;
+        }
+
+        .copy-status {
+            min-height: 1.4em;
+            margin-top: 6px;
+            color: var(--accent-dark);
+            font-size: 0.9rem;
+            font-weight: 650;
         }
 
         footer {
             width: min(calc(100% - 40px), var(--content));
             margin: 0 auto;
-            padding: 28px 0 40px;
+            padding: 18px 0 32px;
             color: var(--muted);
             font-size: 0.92rem;
             display: flex;
@@ -546,14 +597,14 @@
             <div>
                 <p class="eyebrow">Software Engineer at Speedcast</p>
                 <h1>Nikiforos Mitrakos</h1>
-                <p class="hero-subtitle">Software Engineer working across Vue.js, Node.js, AWS, cloud portals and APIs.</p>
+                <p class="hero-subtitle">Building and maintaining production web applications, APIs and cloud services with Vue.js, Node.js and AWS.</p>
                 <div class="hero-actions">
                     <a class="button button-primary" href="#projects">View projects</a>
                     <a class="button button-secondary" href="https://github.com/ExiledPhobos" target="_blank" rel="noopener noreferrer">GitHub</a>
                     <a class="button button-secondary" href="https://www.linkedin.com/in/nikiforos-mitrakos/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
             </div>
-            <img src="images/photo.jpg" alt="Nikiforos Mitrakos" class="profile-image">
+            <img src="images/photo.png" alt="Nikiforos Mitrakos" class="profile-image" fetchpriority="high">
         </div>
     </header>
 
@@ -649,6 +700,7 @@
                     </div>
                     <div class="project-body">
                         <h3>WeatherApp</h3>
+                        <p class="project-tech">Flask · MySQL · REST API · Testing</p>
                         <p>Flask weather application using the Meteomatics API and MySQL, with multiple saved locations, forecast views, pagination and automated tests.</p>
                         <a href="https://github.com/ExiledPhobos/WeatherApp" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
                     </div>
@@ -660,6 +712,7 @@
                     </div>
                     <div class="project-body">
                         <h3>Billionaire Data Management System</h3>
+                        <p class="project-tech">C · Data Structures · Python</p>
                         <p>Data management and analysis application in C using a circular doubly linked list, with Python for statistical analysis and visualization.</p>
                         <a href="https://github.com/ExiledPhobos/Billionaire-Data-Management-System" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
                     </div>
@@ -671,6 +724,7 @@
                     </div>
                     <div class="project-body">
                         <h3>Cryptocurrency Data Pipeline</h3>
+                        <p class="project-tech">Python · pandas · CoinGecko API</p>
                         <p>Python data pipeline that retrieves cryptocurrency data from the CoinGecko API, transforms it with pandas, stores historical results and generates trend visualizations.</p>
                         <a href="https://github.com/ExiledPhobos/ServerlessDataPipeline" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
                     </div>
@@ -682,12 +736,14 @@
             <div class="card contact-card">
                 <div>
                     <h2>Contact</h2>
-                    <p>The easiest ways to reach me or see more of my work.</p>
+                    <p>You can reach me by email or find me on LinkedIn and GitHub.</p>
+                    <span class="email-address">nikiforosmitrakos@gmail.com</span>
+                    <div class="copy-status" id="copy-status" role="status" aria-live="polite"></div>
                 </div>
                 <div class="contact-links">
-                    <a href="mailto:nikiforosmitrakos@gmail.com">Email</a>
-                    <a href="https://www.linkedin.com/in/nikiforos-mitrakos/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://github.com/ExiledPhobos" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <button class="contact-action" id="copy-email" type="button">Copy email</button>
+                    <a class="contact-action" href="https://www.linkedin.com/in/nikiforos-mitrakos/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a class="contact-action" href="https://github.com/ExiledPhobos" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
         </section>
@@ -700,6 +756,40 @@
 
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
+
+        const email = "nikiforosmitrakos@gmail.com";
+        const copyButton = document.getElementById("copy-email");
+        const copyStatus = document.getElementById("copy-status");
+
+        async function copyEmail() {
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(email);
+                } else {
+                    const textArea = document.createElement("textarea");
+                    textArea.value = email;
+                    textArea.setAttribute("readonly", "");
+                    textArea.style.position = "fixed";
+                    textArea.style.opacity = "0";
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    const copied = document.execCommand("copy");
+                    textArea.remove();
+                    if (!copied) throw new Error("Copy command failed");
+                }
+
+                copyButton.textContent = "Copied";
+                copyStatus.textContent = "Email address copied to your clipboard.";
+                setTimeout(() => {
+                    copyButton.textContent = "Copy email";
+                    copyStatus.textContent = "";
+                }, 2500);
+            } catch (error) {
+                copyStatus.textContent = `Copy failed. Email: ${email}`;
+            }
+        }
+
+        copyButton.addEventListener("click", copyEmail);
     </script>
 </body>
 </html>
