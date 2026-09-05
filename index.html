@@ -3,348 +3,703 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikiforos Mitrakos | Software Engineer & Cloud Developer</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Nikiforos Mitrakos is a software engineer working across Vue.js, Node.js, AWS, APIs, cloud systems and integrations.">
+    <meta name="theme-color" content="#0f172a">
+    <meta property="og:title" content="Nikiforos Mitrakos | Software Engineer">
+    <meta property="og:description" content="Software engineer working across Vue.js, Node.js, AWS, APIs, cloud systems and integrations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://exiledphobos.github.io/">
+    <title>Nikiforos Mitrakos | Software Engineer</title>
+
     <style>
-        body {
-            margin: 0;
-	    padding: 0;
-	    font-family: 'Roboto', sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
+        :root {
+            --bg: #f6f8fb;
+            --surface: #ffffff;
+            --surface-soft: #eef4ff;
+            --text: #142033;
+            --muted: #5f6b7a;
+            --border: #dce3ec;
+            --accent: #1f5eff;
+            --accent-dark: #1748c8;
+            --navy: #0f172a;
+            --navy-soft: #16233d;
+            --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+            --radius-lg: 22px;
+            --radius-md: 14px;
+            --content: 1120px;
         }
+
+        * {
+            box-sizing: border-box;
+        }
+
         html {
             scroll-behavior: smooth;
         }
-        header {
-    	    background: linear-gradient(90deg, #0066cc, #003366);
-    	    background-size: 400% 400%;
-    	    animation: gradientBG 5s ease infinite;
-    	    color: white;
-    	    padding: 40px 0;
-    	    text-align: center;
-	}
 
-	@keyframes gradientBG {
-    	    0% { background-position: 0% 50%; }
-    	    50% { background-position: 100% 50%; }
-    	    100% { background-position: 0% 50%; }
-	}
-        header h1 {
+        body {
             margin: 0;
-            font-size: 42px;
-            letter-spacing: 1px;
-	    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
         }
-        header p {
-            margin: 10px 0 0;
-            font-size: 22px;
-            font-weight: 300;
-	    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
-        .tagline {
-            font-size: 18px;
-            margin: 5px 0;
-            color: #dddddd;
-        }
-        nav {
-            text-align: center;
-            background: #333;
-            padding: 15px 0;
-        }
-	nav a {
-    	    text-decoration: none;
-    	    color: #fff;
-     	    margin: 0 20px;
-    	    font-size: 18px;
-    	    position: relative;
-    	    transition: 0.3s ease;
-	}
-	nav a:hover::after {
-    	    content: "";
-    	    display: block;
-    	    height: 2px;
-    	    background: #66b3ff;
-    	    width: 100%;
-    	    position: absolute;
-    	    bottom: -5px;
-    	    left: 0;
-    	    transition: width 0.3s ease;
-	}
-	nav a::after {
-    	    content: "";
-    	    display: block;
-    	    height: 2px;
-    	    background: transparent;
-    	    width: 0;
-    	    position: absolute;
-    	    bottom: -5px;
-    	    left: 0;
-    	    transition: width 0.3s ease;
-	}
-        .download-btn {
-            background: #0066cc;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .download-btn:hover {
-            background: #004c99;
-        }
-        .container {
-            width: 90%;
-	    max-width: 1200px;
-            margin: 50px auto;
-            padding: 40px;
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
-        }
-        section {
-            margin-bottom: 50px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        section h2 {
-            color: #0066cc;
-            border-bottom: 3px solid #eee;
-            padding-bottom: 10px;
-        }
-        .about {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .about p {
-            margin-top: 20px;
-            line-height: 1.6;
-        }
-        .profile-image {
-            border-radius: 50%;
-            width: 150px;
-            height: auto;
-            margin: 0 auto 20px;
+
+        img {
+            max-width: 100%;
             display: block;
         }
-        .skills ul {
-            list-style-type: none;
-            padding: 0;
+
+        a {
+            color: inherit;
         }
-	.skill-bar {
-    	    width: 100%;
-    	    background: #f1f1f1;
-    	    border-radius: 10px;
-    	    height: 20px;
-    	    overflow: hidden;
-    	    margin-bottom: 15px;
-    	    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-	}
-	.skill-bar-fill {
-    	    height: 100%;
-    	    border-radius: 10px;
-    	    background: linear-gradient(to right, #0066cc, #66b3ff);
-    	    width: 0;
-    	    animation: fillBar 2s forwards;
-    	    display: flex;
-    	    justify-content: flex-end;
-    	    align-items: center;
-    	    color: white;
-    	    font-weight: 500;
-    	    padding-right: 8px;
-	    box-shadow: inset 0 -1px 5px rgba(0, 0, 0, 0.3);
-	}
-        @keyframes fillBar {
-            0% { width: 0; }
-            100% { width: var(--skill-width); }
+
+        .site-header {
+            background:
+                radial-gradient(circle at top right, rgba(50, 105, 255, 0.26), transparent 34%),
+                linear-gradient(135deg, var(--navy), var(--navy-soft));
+            color: #fff;
         }
-        .project-gallery {
+
+        .nav-wrap,
+        .hero,
+        main {
+            width: min(calc(100% - 40px), var(--content));
+            margin: 0 auto;
+        }
+
+        nav {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #d8e1ef;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: #fff;
+        }
+
+        .nav-cta {
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            padding: 9px 14px;
+            border-radius: 999px;
+        }
+
+        .hero {
+            padding: 88px 0 92px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: 1fr auto;
+            gap: 56px;
+            align-items: center;
         }
-	.project-item {
-    	    border: none;
-    	    padding: 15px;
-    	    border-radius: 10px;
-    	    background: #fff;
-    	    text-align: center;
-    	    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-    	    transition: transform 0.3s ease, box-shadow 0.3s ease;
-	}
-        .project-item:hover {
-            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.25);
-            transform: translateY(-10px) scale(1.02);
-	    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-	    background-color: #f8f8f8;
-        }
-        .project-image {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
-        }
-	.project-item:hover .project-image {
-    	    transform: scale(1.05);
-	}
-        .project-title {
+
+        .eyebrow {
+            margin: 0 0 14px;
+            color: #aac4ff;
+            font-size: 0.9rem;
             font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            margin: 0;
+            max-width: 780px;
+            font-size: clamp(2.6rem, 7vw, 5rem);
+            line-height: 1.03;
+            letter-spacing: -0.055em;
+        }
+
+        .hero-subtitle {
+            margin: 22px 0 0;
+            max-width: 760px;
+            color: #d8e1ef;
+            font-size: clamp(1.05rem, 2vw, 1.35rem);
+        }
+
+        .hero-actions {
+            margin-top: 30px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 0 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 750;
+            transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+        }
+
+        .button-primary {
+            background: #fff;
+            color: var(--navy);
+        }
+
+        .button-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            color: #fff;
+        }
+
+        .profile-image {
+            width: 190px;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.84);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
+        }
+
+        main {
+            padding: 72px 0 34px;
+        }
+
+        section {
+            margin-bottom: 76px;
+            scroll-margin-top: 32px;
+        }
+
+        .section-heading {
+            margin-bottom: 26px;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            font-size: clamp(1.7rem, 3vw, 2.25rem);
+            letter-spacing: -0.035em;
+        }
+
+        .section-heading p {
+            margin: 8px 0 0;
+            color: var(--muted);
+            max-width: 720px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .about-card {
+            padding: 30px;
+        }
+
+        .about-card p {
+            margin: 0 0 16px;
+        }
+
+        .about-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .work-card {
+            padding: 28px;
+            background: var(--navy);
+            color: #fff;
+            border: 0;
+        }
+
+        .work-card h3 {
+            margin: 0 0 6px;
+            font-size: 1.25rem;
+        }
+
+        .work-card .company {
+            color: #aac4ff;
+            font-weight: 700;
+            margin: 0 0 18px;
+        }
+
+        .work-card ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #d8e1ef;
+        }
+
+        .work-card li + li {
             margin-top: 10px;
-            color: #333;
         }
-        .project-description {
-            margin-top: 5px;
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
         }
+
+        .skill-card {
+            padding: 24px;
+        }
+
+        .skill-card h3 {
+            margin: 0 0 14px;
+            font-size: 1.05rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            display: inline-flex;
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: var(--surface-soft);
+            color: #244175;
+            font-size: 0.88rem;
+            font-weight: 650;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            overflow: hidden;
+            transition: transform 180ms ease, box-shadow 180ms ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 48px rgba(15, 23, 42, 0.12);
+        }
+
+        .project-image-wrap {
+            aspect-ratio: 16 / 9;
+            background: #e9eef6;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-body {
+            padding: 24px;
+        }
+
+        .project-body h3 {
+            margin: 0 0 8px;
+            font-size: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .project-body p {
+            margin: 0 0 18px;
+            color: var(--muted);
+        }
+
         .project-link {
-            color: #0044cc;
+            color: var(--accent-dark);
+            font-weight: 750;
             text-decoration: none;
         }
-        .project-link:hover {
+
+        .project-link:hover,
+        .project-link:focus-visible {
             text-decoration: underline;
         }
+
+        .contact-card {
+            padding: 34px;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .contact-card h2 {
+            margin: 0 0 8px;
+        }
+
+        .contact-card p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .contact-links a {
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            background: #fff;
+        }
+
+        .contact-links a:hover,
+        .contact-links a:focus-visible {
+            border-color: #aebbd0;
+        }
+
         footer {
-            background: #002244;
-            color: #bbb;
-            text-align: center;
-            padding: 30px 10px;
+            width: min(calc(100% - 40px), var(--content));
+            margin: 0 auto;
+            padding: 28px 0 40px;
+            color: var(--muted);
+            font-size: 0.92rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
         }
+
         footer a {
-            color: #66b3ff;
+            color: var(--text);
             text-decoration: none;
-	    margin: 0 15px;
-	    font-weight: bold;
+            font-weight: 700;
         }
-        footer a:hover {
+
+        footer a:hover,
+        footer a:focus-visible {
             text-decoration: underline;
-	    color: #fff;
+        }
+
+        :focus-visible {
+            outline: 3px solid rgba(31, 94, 255, 0.4);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 72px 0;
+            }
+
+            .profile-image {
+                width: 150px;
+                grid-row: 1;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                display: grid;
+                grid-template-columns: minmax(220px, 0.8fr) 1fr;
+            }
+
+            .project-image-wrap {
+                aspect-ratio: auto;
+                border-bottom: 0;
+                border-right: 1px solid var(--border);
+            }
+        }
+
+        @media (max-width: 680px) {
+            .nav-wrap,
+            .hero,
+            main,
+            footer {
+                width: min(calc(100% - 28px), var(--content));
+            }
+
+            nav {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 18px 0;
+            }
+
+            .nav-links {
+                gap: 14px 18px;
+            }
+
+            .nav-cta {
+                padding: 0;
+                border: 0;
+            }
+
+            .hero {
+                padding: 54px 0 62px;
+                gap: 28px;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.4rem, 14vw, 4rem);
+            }
+
+            main {
+                padding-top: 52px;
+            }
+
+            section {
+                margin-bottom: 58px;
+            }
+
+            .skill-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                display: block;
+            }
+
+            .project-image-wrap {
+                aspect-ratio: 16 / 9;
+                border-right: 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .contact-card {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 26px;
+            }
+
+            .contact-links {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Nikiforos Mitrakos</h1>
-        <p>Software Engineer & Cloud Developer</p>
-        <p class="tagline">Delivering Scalable Solutions with Vue.js & AWS</p>
+    <header class="site-header">
+        <div class="nav-wrap">
+            <nav aria-label="Primary navigation">
+                <a class="brand" href="#top">NM</a>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                    <a class="nav-cta" href="Nikiforos_Mitrakos_Resume.pdf" download>Resume</a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="hero" id="top">
+            <div>
+                <p class="eyebrow">Software Engineer at Speedcast</p>
+                <h1>Nikiforos Mitrakos</h1>
+                <p class="hero-subtitle">Software Engineer working across Vue.js, Node.js, AWS, cloud portals and APIs.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#projects">View projects</a>
+                    <a class="button button-secondary" href="https://github.com/ExiledPhobos" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a class="button button-secondary" href="https://www.linkedin.com/in/nikiforos-mitrakos/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+            <img src="images/photo.jpg" alt="Nikiforos Mitrakos" class="profile-image">
+        </div>
     </header>
-    <nav>
-        <a href="#about" aria-label="About Me section">About Me</a>
-        <a href="#skills" aria-label="Skills section">Skills</a>
-        <a href="#projects" aria-label="Projects section">Projects</a>
-        <a href="#contact" aria-label="Contact section">Contact</a>
-        <a href="Nikiforos_Mitrakos_Resume.pdf" download class="download-btn" aria-label="Download resume">Download Resume</a>
-    </nav>
-    <div class="container">
-        <section id="about" class="about">
-            <h2>About Me</h2>
-            <img src="images/photo.jpg" alt="Profile Picture" class="profile-image">
-            <p>Hi, I'm Nikiforos! Currently, I work as a Software Engineer at Speedcast, where I develop and maintain Compass, a cloud portal powered by Vue.js and AWS. I specialize in front-end and back-end cloud solutions, API testing, and integrating tools like Postman, SQL, and ServiceNow for seamless system operations. I bring a passion for leveraging data and technology to build scalable, efficient solutions that drive operational success.</p>
+
+    <main>
+        <section id="about">
+            <div class="section-heading">
+                <h2>About</h2>
+                <p>Production software, cloud services and the systems connecting them.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="card about-card">
+                    <p>Software Engineer at Speedcast working on Compass, a production cloud portal. I work across frontend and backend development with Vue.js, Node.js and AWS, building features, REST APIs and integrations.</p>
+                    <p>I also work with PostgreSQL, TimescaleDB and Redis, along with authentication, authorization, automated testing and issues that span the application stack.</p>
+                    <p>I enjoy understanding how a system behaves end to end and making focused changes that solve the problem without adding unnecessary complexity.</p>
+                </div>
+
+                <aside class="card work-card" aria-label="Current work">
+                    <h3>Current work</h3>
+                    <p class="company">Speedcast, Compass Cloud Portal</p>
+                    <ul>
+                        <li>Vue.js frontend and Node.js serverless backend services.</li>
+                        <li>REST APIs with AWS Lambda, SAM and API Gateway.</li>
+                        <li>PostgreSQL, TimescaleDB, Redis, ServiceNow and Gravitee APIM.</li>
+                        <li>Debugging, regression testing, code review and QA delivery.</li>
+                    </ul>
+                </aside>
+            </div>
         </section>
 
         <section id="skills">
-            <h2>Professional Skills</h2>
-            <ul>
-            	<li>Vue.js
-        	<div class="skill-bar">
-            		<div class="skill-bar-fill" style="--skill-width: 85%;">85%</div>
-        	</div>
-	        </li>
-        	<li>AWS (S3, Lambda, CloudFront)
-        	<div class="skill-bar">
-            		<div class="skill-bar-fill" style="--skill-width: 80%;">80%</div>
-        	</div>
-		</li>
-        	<li>API Development & Testing
-        	<div class="skill-bar">
-            		<div class="skill-bar-fill" style="--skill-width: 85%;">85%</div>
-        	</div>
-		</li>
-        	<li>SQL & Database Management
-        	<div class="skill-bar">
-            		<div class="skill-bar-fill" style="--skill-width: 95%;">95%</div>
-        	</div>
-		</li>
-        	<li>Python
-        	<div class="skill-bar">
-            		<div class="skill-bar-fill" style="--skill-width: 90%;">90%</div>
-        	</div>
-		</li>
-    	    </ul>
-	</section>
+            <div class="section-heading">
+                <h2>Skills</h2>
+                <p>Technologies I use in professional and personal software work.</p>
+            </div>
+
+            <div class="skill-grid">
+                <article class="card skill-card">
+                    <h3>Frontend</h3>
+                    <div class="tags">
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Quasar</span>
+                    </div>
+                </article>
+
+                <article class="card skill-card">
+                    <h3>Backend & APIs</h3>
+                    <div class="tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">REST APIs</span>
+                        <span class="tag">Authentication</span>
+                        <span class="tag">Authorization</span>
+                    </div>
+                </article>
+
+                <article class="card skill-card">
+                    <h3>Cloud & Platform</h3>
+                    <div class="tags">
+                        <span class="tag">AWS</span>
+                        <span class="tag">Lambda</span>
+                        <span class="tag">SAM</span>
+                        <span class="tag">API Gateway</span>
+                        <span class="tag">Gravitee APIM</span>
+                    </div>
+                </article>
+
+                <article class="card skill-card">
+                    <h3>Data & Integration</h3>
+                    <div class="tags">
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">TimescaleDB</span>
+                        <span class="tag">Redis</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">ServiceNow</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </article>
+            </div>
+        </section>
 
         <section id="projects">
-            <h2>Projects</h2>
-            <div class="project-gallery">
-                <div class="project-item">
-                    <img src="images/ServerlessDataPipeline.png" alt="Serverless Data Pipeline" class="project-image">
-                    <h3 class="project-title">Serverless Data Pipeline</h3>
-                    <p class="project-description">Real-time data pipeline for cryptocurrency trends.</p>
-                    <a href="https://github.com/ExiledPhobos/ServerlessDataPipeline" class="project-link">View on GitHub</a>
-                </div>
-                <div class="project-item">
-                    <img src="images/Olympic-Medal-Analysis.png" alt="Olympic Medal Analysis" class="project-image">
-                    <h3 class="project-title">Olympic Medal Analysis</h3>
-                    <p class="project-description">Analyzing trends in historical Olympic data.</p>
-                    <a href="https://github.com/ExiledPhobos/Olympic-Medal-Analysis" class="project-link">View on GitHub</a>
-                </div>
-                <div class="project-item">
-                    <img src="images/WeatherApp.png" alt="WeatherApp" class="project-image">
-                    <h3 class="project-title">WeatherApp</h3>
-                    <p class="project-description">7-day weather forecast application.</p>
-                    <a href="https://github.com/ExiledPhobos/WeatherApp" class="project-link">View on GitHub</a>
-                </div>
-                <div class="project-item">
-                    <img src="images/Video-Game-Sales-Analysis.png" alt="Video Game Sales Analysis" class="project-image">
-                    <h3 class="project-title">Video Game Sales Analysis</h3>
-                    <p class="project-description">Analyzing global video game sales trends.</p>
-                    <a href="https://github.com/ExiledPhobos/Video-Game-Sales-Analysis" class="project-link">View on GitHub</a>
-                </div>
-                <div class="project-item">
-                    <img src="images/Billionaire-Data-Management-System.png" alt="Billionaire Data Management System" class="project-image">
-                    <h3 class="project-title">Billionaire Data Management System</h3>
-                    <p class="project-description">Managing and visualizing global billionaire data trends.</p>
-                    <a href="https://github.com/ExiledPhobos/Billionaire-Data-Management-System" class="project-link">View on GitHub</a>
-                </div>
+            <div class="section-heading">
+                <h2>Projects</h2>
+                <p>A small selection of personal projects covering web development, data structures and data processing.</p>
+            </div>
+
+            <div class="project-grid">
+                <article class="card project-card">
+                    <div class="project-image-wrap">
+                        <img src="images/WeatherApp.png" alt="WeatherApp project preview" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <h3>WeatherApp</h3>
+                        <p>Flask weather application using the Meteomatics API and MySQL, with multiple saved locations, forecast views, pagination and automated tests.</p>
+                        <a href="https://github.com/ExiledPhobos/WeatherApp" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+                </article>
+
+                <article class="card project-card">
+                    <div class="project-image-wrap">
+                        <img src="images/Billionaire-Data-Management-System.png" alt="Billionaire Data Management System project preview" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <h3>Billionaire Data Management System</h3>
+                        <p>Data management and analysis application in C using a circular doubly linked list, with Python for statistical analysis and visualization.</p>
+                        <a href="https://github.com/ExiledPhobos/Billionaire-Data-Management-System" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+                </article>
+
+                <article class="card project-card">
+                    <div class="project-image-wrap">
+                        <img src="images/ServerlessDataPipeline.png" alt="Cryptocurrency Data Pipeline project preview" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <h3>Cryptocurrency Data Pipeline</h3>
+                        <p>Python data pipeline that retrieves cryptocurrency data from the CoinGecko API, transforms it with pandas, stores historical results and generates trend visualizations.</p>
+                        <a href="https://github.com/ExiledPhobos/ServerlessDataPipeline" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+                </article>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Contact Me</h2>
-            <p>If you would like to get in touch, feel free to reach out through any of the following platforms:</p>
-            <ul>
-                <li><strong>Email:</strong> <a href="mailto:nikiforosmitrakos@gmail.com">nikiforosmitrakos@gmail.com</a></li>
-                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nikiforos-mitrakos/">Nikiforos Mitrakos</a></li>
-                <li><strong>GitHub:</strong> <a href="https://github.com/ExiledPhobos">github.com/ExiledPhobos</a></li>
-            </ul>
+            <div class="card contact-card">
+                <div>
+                    <h2>Contact</h2>
+                    <p>The easiest ways to reach me or see more of my work.</p>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:nikiforosmitrakos@gmail.com">Email</a>
+                    <a href="https://www.linkedin.com/in/nikiforos-mitrakos/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/ExiledPhobos" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
         </section>
-    </div>
+    </main>
+
     <footer>
-        <p>© 2024 Nikiforos Mitrakos | <a href="https://github.com/ExiledPhobos">GitHub</a> | <a href="https://www.linkedin.com/in/nikiforos-mitrakos/">LinkedIn</a></p>
+        <span>&copy; <span id="year"></span> Nikiforos Mitrakos</span>
+        <span>Software Engineer</span>
     </footer>
+
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const sections = document.querySelectorAll("section");
-            const revealSections = () => {
-                sections.forEach((section, index) => {
-                    const rect = section.getBoundingClientRect();
-                    if (rect.top < window.innerHeight) {
-			setTimeout(() => {
-                        section.classList.add("visible");
-                    }, index * 100);
-		  }
-                });
-            };
-            revealSections();
-            window.addEventListener("scroll", revealSections);
-        });
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
